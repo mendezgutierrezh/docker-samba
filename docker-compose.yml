@@ -8,15 +8,11 @@ services:
     stdin_open: true
     tty: true
     ports:
-      - 137:137/udp
-      - 138:138/udp     
-      - 139:130/tcp
-      - 445:445/tcp
+      - 139:139
+      - 445:445
     volumes:
       - /usr/share/zoneinfo/America/Chile/Santiago:/etc/localtime
       - /home/Compartido/carpeta1:/carpeta1
       - /home/Compartido/carpeta2:/carpeta2 
       - /home/Compartido/carpeta3:/carpeta3  
-    command: '-s "carpeta1;/carpeta1;yes;no;no" -u "admin;p@ssword" -p'
-    command: '-s "carpeta2;/carpeta2;yes;no;no" -u "admin;admin2021*" -p'
-    command: '-s "carpeta3;/carpeta3;yes;no;no" -u "admin;admin2020*" -p'
+    command: '-s "carpeta1;/carpeta1;yes;no;no;admin1" -u "admin1;p@ssword" -s "carpeta2;/carpeta2;yes;no;no;admin2" -u "admin2;admin2021*" -s "carpeta3;/carpeta3;yes;no;no;admin3" -u "admin3;admin2020*"'
